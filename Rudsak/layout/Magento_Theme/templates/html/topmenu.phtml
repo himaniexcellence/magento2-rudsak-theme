@@ -1,0 +1,41 @@
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Top menu for store
+ *
+ * @var $block \Magento\Theme\Block\Html\Topmenu
+ */
+?>
+<?php $columnsLimit = $block->getColumnsLimit(); ?>
+<?php $_menu = $block->getHtml('level-top', 'submenu', $columnsLimit) ?>
+
+<nav class="navigation" data-action="navigation" style="top:0;">
+    <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
+        <a href="#"><li style="font-family:'Oswald',sans-serif !important;font-weight:bold;font-size:1.2vw;display:inline-block;color: black;padding:0 3%;">WOMEN</li></a>
+        <a href="#"><li style="font-family:'Oswald',sans-serif !important;font-weight:bold;font-size:1.2vw;display:inline-block;color:black;padding:0 3%;">MEN</li></a>
+        <a href="#"><li style="font-family:'Oswald',sans-serif !important;font-weight:bold;font-size:1.2vw;display:inline-block;color:black;padding:0 3%;">KIDS</li></a>
+        <a href="#"><li style="font-family:'Oswald',sans-serif !important;font-weight:bold;font-size:1.2vw;display:inline-block;color:black;padding:0 3%;">SALES</li></a>
+        <a href="#" class="icon-search" style="display:inline-block;padding: 0 5% 1% 5%;"></a>
+    </ul>
+</nav>
+<script>
+require(['jquery','jquery'],function($){
+	$(document).ready(function(){
+        $('.block.block-search').hide();
+		$('.icon-search').click(function(){
+            $('.block.block-search').toggle();
+		});
+        $('#cancel').click(function(){
+            $('.block.block-search').hide();
+        });
+	});
+});
+</script>

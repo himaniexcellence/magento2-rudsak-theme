@@ -1,0 +1,37 @@
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Top menu for store
+ *
+ * @var $block \Magento\Theme\Block\Html\Topmenu
+ */
+?>
+<?php $columnsLimit = $block->getColumnsLimit() ?: 0; ?>
+<?php $_menu = $block->getHtml('level-top', 'submenu', $columnsLimit) ?>
+
+<nav class="navigation" data-action="navigation" style="top:0;">
+    <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
+        <a href="#"><li style="font-family:'courier new';font-weight:bold;font-size:1vw;">WOMEN</li></a>
+        <a href="#"><li style="font-family:'courier new';font-weight:bold;font-size:1vw;">MEN</li></a>
+        <a href="#"><li style="font-family:'courier new';font-weight:bold;font-size:1vw;">KIDS</li></a>
+        <a href="#"><li style="font-family:'courier new';font-weight:bold;font-size:1vw;">SALES</li></a>
+        <li id="search" style="font-family:'icons-blank-theme';"></li>
+    </ul>
+</nav>
+<script>
+	$(document).ready(function(){
+		$('#search').click(function(){
+			$('#newsearch').toggle();
+		});
+	});
+</script>
+<div id="newsearch"> <input type="text" name="search" placeholder="What are you looking for?" class="input-text" role="combobox" aria-haspopup="false" aria-autocomplete="both" autocomplete="off"/>
+</div>
